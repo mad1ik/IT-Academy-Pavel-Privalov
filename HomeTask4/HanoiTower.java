@@ -7,8 +7,6 @@ public class HanoiTower {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int stickCount = 3;
-        int maxNumber = 8;
-        int maxIndex = 0;
 
         //Указываем количество колец для стержня
         System.out.print("Введите количество колец - от 3 до 8: ");
