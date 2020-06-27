@@ -2,8 +2,9 @@ package HomeTask5.CalculatorWithMathExtends;
 
 import HomeTask5.CalculatorWithMathCopy.CalculatorWithMathCopy;
 import HomeTask5.CalculatorWithOperator.CalculatorWithOperator;
+import HomeTask5.CalculatorWithOperator.ICaltulatorInterface;
 
-public class CalculatorWithMathExtends extends CalculatorWithOperator {
+public class CalculatorWithMathExtends extends CalculatorWithOperator implements ICaltulatorInterface {
 
     public final double pow (double a, double b){
         return Math.pow(a, b);

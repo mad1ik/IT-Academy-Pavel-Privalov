@@ -1,6 +1,6 @@
 package HomeTask5.CalculatorWithOperator;
 
-public class CalculatorWithOperator {
+public class CalculatorWithOperator implements ICaltulatorInterface {
     public final double div (double a, double b){
         return a / b;
     }

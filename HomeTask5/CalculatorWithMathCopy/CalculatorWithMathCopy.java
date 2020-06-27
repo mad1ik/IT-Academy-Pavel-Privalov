@@ -1,6 +1,8 @@
 package HomeTask5.CalculatorWithMathCopy;
 
-public class CalculatorWithMathCopy {
+import HomeTask5.CalculatorWithOperator.ICaltulatorInterface;
+
+public class CalculatorWithMathCopy implements ICaltulatorInterface {
     public final double div (double a, double b){
         return a / b;
     }
@@ -17,11 +19,11 @@ public class CalculatorWithMathCopy {
         return a - b;
     }
 
-    public final double pow (double a, double b){
+    public final double exp (double a, double b){
         return Math.pow(a, b);
     }
 
-    public final double abs (double a){
+    public final double mod (double a){
         return Math.abs(a);
     }
 

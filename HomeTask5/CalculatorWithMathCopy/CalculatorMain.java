@@ -8,7 +8,7 @@ public class CalculatorMain {
         double a = calc.multiply(15,7);
         double b = calc.plus(4.1, a);
         double c = calc.div(28,5);
-        double d = calc.pow(c,2);
+        double d = calc.exp(c,2);
         double res = calc.plus(b, d);
         System.out.println("4.1 + 15 * 7 + (28 / 5) ^ 2 = " + res);
 
