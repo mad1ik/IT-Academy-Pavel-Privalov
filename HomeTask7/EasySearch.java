@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class EasySearch implements ISearchEngine {
     private String content;
     public int search(String book, String word){
-
         try
         {
             content = new String(Files.readAllBytes(Paths.get(book)));
@@ -22,8 +21,8 @@ public class EasySearch implements ISearchEngine {
         while (index < content.length() && (index = content.indexOf(word, index)) >= 0){
             count++;
             index = index + word.length();
-
         }
+
         return count;
     }
 
