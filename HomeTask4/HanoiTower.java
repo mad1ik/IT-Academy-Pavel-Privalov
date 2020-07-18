@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class HanoiTower {
+    private static int input;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int stickCount = 3;
@@ -23,14 +25,16 @@ public class HanoiTower {
             }
         }
 
-        int pike[][] = new int[countRings][stickCount];
+        int[][] pike = new int[countRings][stickCount];
+        int[] inputCheck = new int[countRings];
         //Заполняем первый стержень значениеми от 1 до вышеуказанного количества
         for (int i = 0; i < pike.length; i++) {
             pike[i][0] = i + 1;
+            inputCheck[i] = i + 1;
         }
 
         //Создаём массив для проверки + заполняем третий стержень для проверки
-        int temp[][] = new int[countRings][stickCount];
+        int[][] temp = new int[countRings][stickCount];
         for (int i = 0; i < pike.length; i++) {
             temp[i][2] = i + 1;
         }
@@ -40,8 +44,23 @@ public class HanoiTower {
         printZone(pike);
 
         while (!Arrays.deepEquals(pike, temp)){
-            System.out.print("Какое элемент вы хотите взять? ");
-            int input = scanner.nextInt();
+            //Проверяем выбранный элемент на наличие в массиве
+            System.out.print("Какой элемент вы хотите взять? ");
+            boolean running = true;
+            while (running) {
+                input = scanner.nextInt();
+                for (int value : inputCheck) {
+                    if (value == input) {
+                        running = false;
+                        break;
+                    }
+
+                    if (input < 1 || input > countRings){
+                        System.out.print("Такого элемента не существует, введите повторно...");
+                        break;
+                    }
+                }
+            }
 
             //Проходим массив, вместо введённого элемента ставим ноль
             for (int i = 0; i < pike.length; i++) {
@@ -69,6 +88,7 @@ public class HanoiTower {
 
             printZone(pike);
         }
+
         System.out.println("Игра окончена!");
     }
 
