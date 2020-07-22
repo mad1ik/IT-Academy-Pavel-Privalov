@@ -24,10 +24,9 @@ public class TestMain2 {
             System.out.println("Ошибка записи файла");
         }
 
-        ArrayList<Man> secondList = new ArrayList<>();
         try (FileInputStream fis = new FileInputStream("manList2.bin");
             ObjectInputStream ois = new ObjectInputStream(fis)){
-            secondList = (ArrayList<Man>) ois.readObject();
+            ois.readObject();
         } catch (IOException | ClassNotFoundException e){
             System.out.println("Ошибка чтения файла");
         }
