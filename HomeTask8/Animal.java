@@ -1,19 +1,19 @@
 package HomeTask8;
 
 public class Animal {
-    private String age;
+    private int age;
     private String nick;
 
-    public Animal(String age, String nick) {
+    public Animal(int age, String nick) {
         this.age = age;
         this.nick = nick;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -23,9 +23,5 @@ public class Animal {
 
     public void setNick(String nick) {
         this.nick = nick;
-    }
-
-    static int RandomString(int stringLength){
-        return stringLength;
     }
 }
